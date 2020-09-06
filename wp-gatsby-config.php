@@ -20,7 +20,8 @@ $preview_domain = "http://localhost:8000"; // change this to the gatsby site's u
 // 
 
 add_filter('preview_post_link', function ($link) {
-	global $post;
+  global $preview_domain;
+  global $post;
 	$post_ID = $post->ID;
 	$post_slug = get_post_field( 'post_name', $post_id );
 
