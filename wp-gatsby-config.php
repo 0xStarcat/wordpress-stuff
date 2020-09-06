@@ -8,8 +8,7 @@
 //
 //
 // globals
-$preview_domain = "http://localhost:8000"; // change this to the gatsby site's url
-
+define("PREVIEW_DOMAIN", "http://localhost:8000") // change this to the gatsby site's url
 
 
 //
@@ -20,12 +19,11 @@ $preview_domain = "http://localhost:8000"; // change this to the gatsby site's u
 // 
 
 add_filter('preview_post_link', function ($link) {
-  global $preview_domain;
   global $post;
 	$post_ID = $post->ID;
 	$post_slug = get_post_field( 'post_name', $post_id );
 
-	return $preview_domain
+	return PREVIEW_DOMAIN
 		. wp_make_link_relative(get_permalink($post -> ID))
 		. '?preview=true&nonce='
 		. wp_create_nonce('wp_rest')
