@@ -61,6 +61,10 @@ function bones_ahoy() {
   // cleaning up excerpt
   add_filter( 'excerpt_more', 'bones_excerpt_more' );
 
+  // adds menus
+  add_action( 'init', 'register_my_menus' );
+
+
 } /* end bones ahoy */
 
 // let's get this party started
@@ -246,6 +250,21 @@ function bones_fonts() {
 }
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
+
+// Adds several more menus 
+
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'menu-1' => __( 'Menu 1' ),
+      'menu-2' => __( 'Menu 2' ),
+      'menu-3' => __( 'Menu 3' ),
+      'menu-4' => __( 'Menu 4' ),
+      'menu-5' => __( 'Menu 5' ),
+      'menu-6' => __( 'Menu 6' )
+    )
+  );
+}
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
