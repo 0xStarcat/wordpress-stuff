@@ -266,5 +266,12 @@ function register_my_menus() {
   );
 }
 
+// ACF Google Map key
+// function my_acf_google_map_api( $api ){
+//   $api['key'] = 'xxx';
+//   return $api;
+// }
+// add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

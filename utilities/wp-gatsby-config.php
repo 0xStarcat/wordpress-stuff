@@ -23,7 +23,9 @@ add_filter('preview_post_link', function ($link) {
 		. '?preview=true&nonce='
 		. wp_create_nonce('wp_rest')
 	    . '&id='
-		. $post_ID;
+    . $post_ID
+    . '&post_type='
+		. get_post_type($post);
 });
 
 
