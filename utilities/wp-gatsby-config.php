@@ -13,7 +13,7 @@ function get_draft_permalink( $post_id ) {
   require_once ABSPATH . '/wp-admin/includes/post.php';
   list( $permalink, $postname ) = get_sample_permalink( $post_id );
 
-  return str_replace( '%pagename%', 'preview', $permalink );
+  return str_replace( '%pagename%', 'draft', $permalink );
 }
 
 
